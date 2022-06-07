@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = {
   entry: './frontend/todo_redux.jsx',
+  // entry: './frontend/tea_shop.js',
   output: {
     filename: './bundle.js',
   },
