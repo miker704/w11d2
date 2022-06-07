@@ -13,6 +13,6 @@ export const receiveStep = (step) => ({
 });
 
 export const removeStep = (step) => ({
-  type: REMOVE_TEP,
+  type: REMOVE_STEP,
   step
 });
