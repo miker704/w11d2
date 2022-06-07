@@ -6,7 +6,7 @@ import {
 
 
 
-const todosReducer = (state = initialState, action) => {
+const todosReducer = (state ={}, action) => {
     Object.freeze(state);
     // let nextState;
     const nextState = Object.assign({}, state);
