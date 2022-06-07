@@ -1,6 +1,7 @@
 import {
     RECEIVE_TODOS,
-    RECEIVE_TODO
+    RECEIVE_TODO,
+    REMOVE_TODO
 } from '../actions/todo_actions.js';
 
 
@@ -17,6 +18,9 @@ const todosReducer = (state ={}, action) => {
         case RECEIVE_TODO:
             nextState[action.todo.id] = action.todo;
             return nextState;
+            case  REMOVE_TODO:
+                nextState[action.todo.id] = action.todo;
+                return nextState;
         default:
             return state;
     }
