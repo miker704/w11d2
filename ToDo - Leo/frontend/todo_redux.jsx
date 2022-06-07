@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store/store';
+import configureStore from './store/store.js';
+import { receiveTodo, receiveTodos } from './actions/todo_actions.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {}; 
-  const store = configureStore(preloadedState);
-  window.store = store;
+  const store = configureStore();
   
+  window.store = store;
+  window.receiveTodos = receiveTodos;
+  window.receiveTodo = receiveTodo;
 });

@@ -85,8 +85,8 @@ var initialState = {
 var todosReducer = function todosReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  var nextState;
   Object.freeze(state);
+  var nextState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_todo_actions_js__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_TODOS:
@@ -34270,14 +34270,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _store_store_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store.js */ "./frontend/store/store.js");
+/* harmony import */ var _actions_todo_actions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions/todo_actions.js */ "./frontend/actions/todo_actions.js");
+
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {};
-  var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState);
+  var store = (0,_store_store_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
   window.store = store;
+  window.receiveTodos = _actions_todo_actions_js__WEBPACK_IMPORTED_MODULE_3__.receiveTodos;
+  window.receiveTodo = _actions_todo_actions_js__WEBPACK_IMPORTED_MODULE_3__.receiveTodo;
 });
 })();
 
